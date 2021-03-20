@@ -48,13 +48,17 @@
 }
 
 .occSubmit {
-    color: #7a7a7a;
-    background-color: #e7e7e7;
+    color: white;
+    background-color: #eb0000;
     margin: auto;
-    width: 180px;
-    border-radius: 25px;
+    width: 100%;
+    border-radius: 5px;
     padding-top: 1px;
     padding-bottom: 1px;
+}
+
+.occSubmit > p {
+    margin: 10px;
 }
 
 .occSubmit:hover {
