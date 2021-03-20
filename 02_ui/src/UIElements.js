@@ -141,9 +141,9 @@ class OccupancyPopup extends React.Component {
                         <Spacer />
                         <br />
                         <OccupancySlider callback={this.onSliderEvt}/>
-                        <div className="occSubmit" onClick={() => this.submit()}>
+                        {/* <div className="occSubmit" onClick={() => this.submit()}>
                             <p>Submit</p>
-                        </div>
+                        </div> */}
                     </div>
                     
                 }
