@@ -32,7 +32,9 @@ class Horizontal extends React.Component {
   constructor (props, context) {
     super(props, context)
     this.state = {
-      value: 0
+      value: 0,
+      active: false,
+      sliderLabel: "Start"
     }
   }
 
@@ -43,44 +45,54 @@ class Horizontal extends React.Component {
   };
 
   handleChangeComplete = evt => {
-    if(this.state.value < 100) {
-      this.setState({
-        value: 0
-      })
+    if(!this.state.active) {
+      if(this.state.value < 100) {
+        this.setState({
+          value: 0
+        })
+      }
+      else {
+        this.setState({
+          active: true,
+          sliderLabel: "End"
+        })
+      }
+    }
+    else if(this.state.active) {
+      if(this.state.value > 0) {
+        this.setState({
+          value: 100
+        })
+      }
+      else {
+        this.setState({
+          active: false,
+          sliderLabel: "Start"
+        })
+      }
     }
   };
 
   render () {
     const { value } = this.state
     return (
-      <div className='slider'>
+      <div className='sliderContainer'>
         <Slider
+          className='slider'
           min={0}
           max={100}
           value={value}
           onChange={this.handleChange}
           onChangeComplete={this.handleChangeComplete}
-          handleLabel={'End'}
+          handleLabel={this.state.sliderLabel}
           tooltip={false}
         />
-        {/* <div className='value'>{value}</div> */}
       </div>
     )
   }
 }
 
 class EasyPark extends React.Component {
-  updateSlider(evt) {
-    if(evt.target.value < 100) {
-      evt.target.value = 0
-    }
-    else {
-      alert("chack pot")
-    }
-
-    console.log(evt.target.value)
-  }
-
   render() {
     return(
       <div className="item">
