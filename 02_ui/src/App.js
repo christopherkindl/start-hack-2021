@@ -29,8 +29,8 @@ class Locations extends React.Component {
 }
 
 class Horizontal extends React.Component {
-  constructor (props, context) {
-    super(props, context)
+  constructor (props) {
+    super(props)
     this.state = {
       value: 0,
       active: false,
@@ -56,6 +56,7 @@ class Horizontal extends React.Component {
           active: true,
           sliderLabel: "End"
         })
+        this.props.change_park_state(true)
       }
     }
     else if(this.state.active) {
@@ -69,6 +70,7 @@ class Horizontal extends React.Component {
           active: false,
           sliderLabel: "Start"
         })
+        this.props.change_park_state(false)
       }
     }
   };
@@ -93,18 +95,39 @@ class Horizontal extends React.Component {
 }
 
 class EasyPark extends React.Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+    }
+  }
+
+  update_park_state = active => {
+    if(active) {
+      this.setState({
+        inline_text: () => {return <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+      })
+    }
+    else {
+      this.setState({
+        inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+      })
+    }
+  }
+  
   render() {
     return(
       <div className="item">
         <p className="itemTitle">EasyPark</p>
         <div className="EPLocation">
           <img src="/assets/pin.png" className="pinIcon"/>
-          <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>
+          {/* <p>{this.state.inline_text}</p> */}
+          {this.state.inline_text()}
         </div>
         <div className="clearFloat"></div>
 
         <div className="sliderBox">
-          <Horizontal />
+          <Horizontal change_park_state={this.update_park_state} />
         </div>
       </div>
     );
