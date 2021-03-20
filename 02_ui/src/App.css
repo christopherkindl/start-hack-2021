@@ -123,6 +123,16 @@
   margin-top: 50px;
 }
 
+.sliderBoxContentRight {
+  --slide-text: "Swipe right to park";
+  --slide-float: right;
+}
+
+.sliderBoxContentLeft {
+  --slide-text: "Swipe left to stop";
+  --slide-float: left;
+}
+
 .sliderBox .sliderContainer {
   position: absolute;
   left: 0px;
@@ -147,9 +157,9 @@
 }
 
 .sliderBox .rangeslider::after {
-  content: 'Swipe right to park';
-  /* content: -ah-attr-from(sliderBox, data-content); */
-  float: right;
+  /* content: 'Swipe right to park'; */
+  content: var(--slide-text);
+  float: var(--slide-float);
   margin-right: 30px;
   margin-left: 30px;
   margin-top: 20px;

@@ -98,19 +98,22 @@ class EasyPark extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+      inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>},
+      slider_style: "sliderBoxContentRight"
     }
   }
 
   update_park_state = active => {
     if(active) {
       this.setState({
-        inline_text: () => {return <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+        inline_text: () => {return <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>},
+        slider_style: "sliderBoxContentLeft"
       })
     }
     else {
       this.setState({
-        inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+        inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>},
+        slider_style: "sliderBoxContentRight"
       })
     }
   }
@@ -126,7 +129,7 @@ class EasyPark extends React.Component {
         </div>
         <div className="clearFloat"></div>
 
-        <div className="sliderBox" data-content="Nada">
+        <div className={["sliderBox", this.state.slider_style].join(' ')}>
           <Horizontal change_park_state={this.update_park_state} />
         </div>
       </div>
