@@ -1,6 +1,5 @@
 import React from 'react';
 import './UIElements.css';
-import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
 import {OccupancyCar, OccupancySlider} from './Occupancy.js'
 
@@ -15,14 +14,28 @@ class Header extends React.Component {
     }
 }
 
-
-
 function Spacer() {
     return (
-        <div className="spacer">
-        </div>
+      <div className="spacer">
+      </div>
     );
 }
+
+class Locations extends React.Component {
+    render() {
+        return(
+            <div className="item">
+            <p className="itemTitle">My P+Rail locations</p>
+            <div>
+                <br />
+                <p>You can save your favorite locations.</p>
+                <p className="createNow">Create now</p>
+                <div className="clearFloat"></div>
+            </div>
+            </div>
+        );
+    }
+  }
 
 function shuffle(array) {
     var curIdx = array.length;
@@ -165,4 +178,4 @@ class SearchBar extends React.Component {
     }
 }
 
-export  {Header, OccupancyPopup, SearchBar};
+export  {Header, Spacer, Locations, OccupancyPopup, SearchBar};
