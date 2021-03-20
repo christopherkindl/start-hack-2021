@@ -1,0 +1,35 @@
+.occCar {
+    height: 58px;
+    width: 65px;
+    display: inline;
+    float: left;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.occSlider {
+    margin-bottom: 80px;
+}
+
+.occSlider .rangeslider {
+    /* height: 100px !important; */
+    /* border-radius: 50px !important; */
+}
+
+.occSlider .rangeslider__handle {
+    background-color: #EB0000 !important;
+    box-shadow: none !important;
+    border-radius: 50px !important;
+}
+
+.occSlider .rangeslider__handle::after {
+    background-color: #EB0000 !important;
+    box-shadow: none !important;
+    width: 0px !important;
+    height: 0px !important;
+}
+
+.occSlider .rangeslider__fill {
+    background-color: #EB0000 !important; 
+}

@@ -3,7 +3,8 @@ import './App.css';
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
 
-import {Header, SearchBar} from './UIElements.js'
+import {Header, OccupancyPopup, SearchBar} from './UIElements.js'
+import { findAllInRenderedTree } from 'react-dom/test-utils';
 
 function Spacer() {
   return (
@@ -115,6 +116,8 @@ class EasyPark extends React.Component {
         inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>},
         slider_style: "sliderBoxContentRight"
       })
+
+      this.props.triggerInput(true);
     }
   }
   
@@ -137,17 +140,35 @@ class EasyPark extends React.Component {
   }
 }
 
-function App() {
-  return (
-    <div className="App">
-      <Header />
-      <SearchBar />
-      <Spacer />
-      <Locations />
-      <Spacer />
-      <EasyPark />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    occVisible: false
+  };
+
+  set_occ_visibile = val => {
+    this.setState({
+      occVisible: val
+     });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <SearchBar />
+        <Spacer />
+        <Locations />
+        <Spacer />
+        <EasyPark triggerInput={this.set_occ_visibile} />
+        {this.state.occVisible ? <OccupancyPopup close={this.set_occ_visibile} /> : null }
+  
+        {/* <div class="btn" onClick={() => {this.set_occ_visibile(true)}}>
+          <button>This is button</button>
+        </div> */}
+      </div>
+    );
+  }
+  
 }
 
 export default App;
