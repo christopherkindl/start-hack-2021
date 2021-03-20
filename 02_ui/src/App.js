@@ -1,32 +1,9 @@
 import React from 'react';
-import logo from './SBB_Logo.png';
-import lupe from './search.png';
-import pin from './pin.png';
 import './App.css';
 import Slider from 'react-rangeslider'
 import 'react-rangeslider/lib/index.css'
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div className="header">
-        <p>P+Rail</p>
-        <img src={logo} className="logo" alt="logo" />
-      </div>
-    );
-  }
-}
-
-class SearchBar extends React.Component {
-  render() {
-    return(
-      <div className="searchbar">
-        <img src={lupe} className="searchIcon"/>
-        <p>Search for P+Rail Location</p>
-      </div>
-    );
-  }
-}
+import {Header, SearchBar} from './UIElements.js'
 
 function Spacer() {
   return (
@@ -109,7 +86,7 @@ class EasyPark extends React.Component {
       <div className="item">
         <p className="itemTitle">EasyPark</p>
         <div className="EPLocation">
-          <img src={pin} className="pinIcon"/>
+          <img src="/assets/pin.png" className="pinIcon"/>
           <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>
         </div>
         <div className="clearFloat"></div>
@@ -117,14 +94,6 @@ class EasyPark extends React.Component {
         <div className="sliderBox">
           <Horizontal />
         </div>
-
-        {/* <input className="endSlider" type="range" min="1" max="100" defaultValue={0}
-        onMouseUp={evt => this.updateSlider(evt)}
-        onTouchEnd={evt => this.updateSlider(evt)} /> */}
-
-        
-
-        {/* <p>Search for P+Rail Location</p> */}
       </div>
     );
   }
@@ -140,21 +109,6 @@ function App() {
       <Spacer />
       <EasyPark />
     </div>
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
   );
 }
 
