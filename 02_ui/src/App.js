@@ -113,6 +113,8 @@ class EasyPark extends React.Component {
       this.setState({
         inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
       })
+
+      this.props.triggerInput(true);
     }
   }
   
@@ -154,7 +156,7 @@ class App extends React.Component {
         <Spacer />
         <Locations />
         <Spacer />
-        <EasyPark />
+        <EasyPark triggerInput={this.set_occ_visibile} />
         {this.state.occVisible ? <OccupancyPopup close={this.set_occ_visibile} /> : null }
   
         {/* <div class="btn" onClick={() => {this.set_occ_visibile(true)}}>
