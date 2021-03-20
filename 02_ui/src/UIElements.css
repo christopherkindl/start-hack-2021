@@ -1,0 +1,22 @@
+.searchbar {
+    height: 65px;
+    background: white;
+  }
+
+  .searchbar > p {
+    color: #7a7a7a;
+    font-size: 20px;
+    display: inline;
+    float: left;
+    margin-top: 6px;
+    margin-left: 15px;
+  }
+  
+  .searchIcon {
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 20px;
+    float:left;
+    display:inline;
+  }
+  
