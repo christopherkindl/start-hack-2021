@@ -126,7 +126,7 @@ class EasyPark extends React.Component {
         </div>
         <div className="clearFloat"></div>
 
-        <div className="sliderBox">
+        <div className="sliderBox" data-content="Nada">
           <Horizontal change_park_state={this.update_park_state} />
         </div>
       </div>
