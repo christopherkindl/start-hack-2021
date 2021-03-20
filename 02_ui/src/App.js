@@ -30,10 +30,12 @@ class Locations extends React.Component {
 }
 
 class Horizontal extends React.Component {
-  constructor (props, context) {
-    super(props, context)
+  constructor (props) {
+    super(props)
     this.state = {
-      value: 0
+      value: 0,
+      active: false,
+      sliderLabel: "Start"
     }
   }
 
@@ -44,56 +46,89 @@ class Horizontal extends React.Component {
   };
 
   handleChangeComplete = evt => {
-    if(this.state.value < 100) {
-      this.setState({
-        value: 0
-      })
+    if(!this.state.active) {
+      if(this.state.value < 100) {
+        this.setState({
+          value: 0
+        })
+      }
+      else {
+        this.setState({
+          active: true,
+          sliderLabel: "End"
+        })
+        this.props.change_park_state(true)
+      }
+    }
+    else if(this.state.active) {
+      if(this.state.value > 0) {
+        this.setState({
+          value: 100
+        })
+      }
+      else {
+        this.setState({
+          active: false,
+          sliderLabel: "Start"
+        })
+        this.props.change_park_state(false)
+      }
     }
   };
 
   render () {
     const { value } = this.state
     return (
-      <div className='slider'>
+      <div className='sliderContainer'>
         <Slider
+          className='slider'
           min={0}
           max={100}
           value={value}
           onChange={this.handleChange}
           onChangeComplete={this.handleChangeComplete}
-          handleLabel={'End'}
+          handleLabel={this.state.sliderLabel}
           tooltip={false}
         />
-        {/* <div className='value'>{value}</div> */}
       </div>
     )
   }
 }
 
 class EasyPark extends React.Component {
-  updateSlider(evt) {
-    if(evt.target.value < 100) {
-      evt.target.value = 0
+  constructor (props) {
+    super(props)
+    this.state = {
+      inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
     }
-    else {
-      alert("chack pot")
-    }
-
-    console.log(evt.target.value)
   }
 
+  update_park_state = active => {
+    if(active) {
+      this.setState({
+        inline_text: () => {return <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+      })
+    }
+    else {
+      this.setState({
+        inline_text: () => {return <p>Park at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>}
+      })
+    }
+  }
+  
   render() {
     return(
       <div className="item">
         <p className="itemTitle">EasyPark</p>
         <div className="EPLocation">
           <img src="/assets/pin.png" className="pinIcon"/>
-          <p>Your car is currently parked at <span className="EPLocationName">Rapperswil Bahnhof</span>.</p>
+          {/* <p>{this.state.inline_text}</p> */}
+          {this.state.inline_text()}
         </div>
         <div className="clearFloat"></div>
 
-        <div className="sliderBox">
-          <Horizontal />
+        <div className="sliderBox" data-content="Nada">
+          <Horizontal change_park_state={this.update_park_state} />
         </div>
       </div>
     );
@@ -122,9 +157,9 @@ class App extends React.Component {
         <EasyPark />
         {this.state.occVisible ? <OccupancyPopup close={this.set_occ_visibile} /> : null }
   
-        <div class="btn" onClick={() => {this.set_occ_visibile(true)}}>
+        {/* <div class="btn" onClick={() => {this.set_occ_visibile(true)}}>
           <button>This is button</button>
-        </div>
+        </div> */}
       </div>
     );
   }

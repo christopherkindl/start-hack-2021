@@ -17,18 +17,6 @@
   color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-
-
-
 @font-face {
   font-family: 'SBBWeb-Light';
   src: local('SBBWeb-Light'), url(./SBBWeb-Light.woff) format('woff');
@@ -71,10 +59,6 @@
   pointer-events: none;
   display:inline;
 }
-
-
-
-
 
 .spacer {
   height: 10px;
@@ -134,12 +118,44 @@
 }
 
 .sliderBox {
+  position: relative;
+  height: 120px;
   margin-top: 50px;
+}
+
+.sliderBox .sliderContainer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+
+  border-radius: 100px;
+  border: 3px solid #d1d1d1;
+  padding: 6px;
+}
+
+.sliderBox .slider {
+  border: 1px solid #E5E5E5;
 }
 
 .sliderBox .rangeslider {
   height: 100px !important;
   border-radius: 50px !important;
+  /* padding-left: 20px;
+  padding-right: 20px; */
+  box-shadow: none !important;
+  margin: 0px !important;
+}
+
+.sliderBox .rangeslider::after {
+  content: 'Swipe right to park';
+  /* content: -ah-attr-from(sliderBox, data-content); */
+  float: right;
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-family: 'SBBWeb-Roman';
+  font-size: 20px;
+  color: #b3b3b3;
 }
 
 .sliderBox .rangeslider__handle {
@@ -166,7 +182,7 @@
 .sliderBox .rangeslider__handle-label {
   font-family: 'SBBWeb-Bold' !important;
   font-size: 26px !important;
-  color: #dadada !important;
-  margin-top: 32px !important;
-  margin-left: 25px !important;
+  color: #f5f5f5 !important;
+  margin-top: 35px !important;
+  text-align: center;
 }
