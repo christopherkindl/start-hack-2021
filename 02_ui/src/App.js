@@ -23,8 +23,6 @@ class App extends React.Component {
         <Header />
         <SearchBar />
         <Spacer />
-        <CurrentOccupancy />
-        <Spacer />
         <Locations />
         <Spacer />
         <EasyPark triggerInput={this.set_occ_visibile} />
