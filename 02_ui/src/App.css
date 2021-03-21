@@ -19,17 +19,17 @@
 
 @font-face {
   font-family: 'SBBWeb-Light';
-  src: local('SBBWeb-Light'), url(./SBBWeb-Light.woff) format('woff');
+  src: url(./assets/SBB_Light.ttf);
 }
 
 @font-face {
   font-family: 'SBBWeb-Bold';
-  src: local('SBBWeb-Bold'), url(./SBBWeb-Bold.woff) format('woff');
+  src: url(./assets/SBB_Bold.ttf);
 }
 
 @font-face {
   font-family: 'SBBWeb-Roman';
-  src: local('SBBWeb-Roman'), url(./SBBWeb-Roman.woff) format('woff');
+  src: url(./assets/SBB_Roman.ttf);
 }
 
 .App {
