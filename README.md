@@ -1,6 +1,6 @@
 # Start Hack 2021
 
-Code bits coming soon – Follow [starthack.eu](https://www.starthack.eu/program) for more information of the event.
+**Case: Using customer voice to better predict parking slot occupancy of SBB's parking facilities**
 
 ## Live Demo
 [Link to Demo](https://park-and-rail.azurewebsites.net/)
