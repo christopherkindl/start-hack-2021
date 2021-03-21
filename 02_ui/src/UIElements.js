@@ -4,13 +4,33 @@ import 'react-rangeslider/lib/index.css'
 import {OccupancyCar, OccupancySlider} from './Occupancy.js'
 
 class Header extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
+    service_clicked = val => {
+        if(this.props.go_to_service)
+            this.props.go_to_service(val)
+    }
+
     render() {
-        return (
-            <div className="header">
-                <p>P+Rail</p>
-                <img src="/assets/SBB_Logo.png" className="logo" alt="logo" />
-            </div>
-        );
+        if(this.props.go_to_service) {
+            return (
+                <div className="header">
+                    <button className="header_back" onClick={() => this.service_clicked(0)}><img src={"/assets/back_symbol_2.png"} /></button>
+                    <p>P+Rail</p>
+                    <img src="/assets/SBB_Logo.png" className="logo" alt="logo" />
+                </div>
+            );
+        }
+        else {
+            return (
+                <div className="header">
+                    <p>P+Rail</p>
+                    <img src="/assets/SBB_Logo.png" className="logo" alt="logo" />
+                </div>
+            );
+        }
     }
 }
 
@@ -27,9 +47,8 @@ class Locations extends React.Component {
             <div className="item">
             <p className="itemTitle">My P+Rail locations</p>
             <div>
-                <br />
-                <p>You can save your favorite locations.</p>
-                <p className="createNow">Create now</p>
+                <p className="loc_p">You can save your favorite locations.</p>
+                <a className="createNow">Create now</a>
                 <div className="clearFloat"></div>
             </div>
             </div>
