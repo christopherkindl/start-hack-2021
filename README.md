@@ -52,6 +52,6 @@ We then trained a time series model on a the weighted ticket sales data and the 
 
 The prediction seem to accurately depict the real occupancy rates, indicating that the assumptions we made are realtively valid.
 
-We achieved a mean squared error of 0.0295 for the occupancy rate.
+We achieved a mean squared error of **0.0295** for the occupancy rate.
 
 ![](./Model.png)
