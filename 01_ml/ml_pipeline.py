@@ -10,6 +10,34 @@ from datetime import timedelta
 import logging
 
 
+import pandas as pd
+
+#import datetime
+
+from statsmodels.tsa.arima_model import ARIMA
+import matplotlib.pyplot as plt
+from pmdarima import auto_arima
+import math
+from sklearn.metrics import mean_squared_error, mean_absolute_error
+from sklearn import preprocessing
+
+import pandas as pd
+import numpy as np
+
+from matplotlib import pyplot as plt
+
+from statsmodels.tsa.seasonal import seasonal_decompose
+from statsmodels.tsa.seasonal import seasonal_decompose 
+
+from statsmodels.tsa.holtwinters import SimpleExpSmoothing   
+
+from statsmodels.tsa.holtwinters import ExponentialSmoothing
+from fbprophet import Prophet
+
+
+import time
+
+
 log = logging.getLogger(__name__)
 
 
@@ -66,8 +94,6 @@ def create_schema(**kwargs):
     log.info("Created Schema and Tables")
 
 def ml_train_prediction(**kwargs):
-
-    #### --- ACHI -----
 
     tickets['start'] = pd.to_datetime(tickets['start'])
     tickets['end'] = pd.to_datetime(tickets['end'])
@@ -217,11 +243,7 @@ def ml_train_prediction(**kwargs):
     out = pd.DataFrame({'date':inp.ds, 'occupancy_rate':df[0]})
 
 
-
-
-
-
-     #### --- ACHI -----
+    ############# Model Output
 
     # Occupancy dataset from ticket sales
     tickets_conv['occupancy_rate'] = (tickets_conv['occupancy_rate'] / TOTAL_SPACE)*100
