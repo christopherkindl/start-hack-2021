@@ -19,21 +19,22 @@
 
 @font-face {
   font-family: 'SBBWeb-Light';
-  src: local('SBBWeb-Light'), url(./SBBWeb-Light.woff) format('woff');
+  src: url(./assets/SBB_Light.ttf);
 }
 
 @font-face {
   font-family: 'SBBWeb-Bold';
-  src: local('SBBWeb-Bold'), url(./SBBWeb-Bold.woff) format('woff');
+  src: url(./assets/SBB_Bold.ttf);
 }
 
 @font-face {
   font-family: 'SBBWeb-Roman';
-  src: local('SBBWeb-Roman'), url(./SBBWeb-Roman.woff) format('woff');
+  src: url(./assets/SBB_Roman.ttf);
 }
 
 .App {
   font-family: 'SBBWeb-Roman';
+  position: relative;
 }
 
 .header_back {
@@ -112,7 +113,7 @@
 }
 
 .EPLocation > p {
-  font-size: 18px;
+  font-size: 22px;
   display: inline;
   float: left;
   margin-top: 6px;

@@ -1,8 +1,6 @@
 import React from 'react';
 import './ServiceSelector.css';
 
-{/* <img src={"/assets/car_" + this.props.color + ".png"} */}
-
 class ServiceSelector extends React.Component {
     constructor (props) {
         super(props)
@@ -20,7 +18,7 @@ class ServiceSelector extends React.Component {
         return (
             <div className="item">
                 <div className="ss_container">
-                    <button className="ss_service_container" onClick={() => this.service_clicked(1)}>
+                    <button className="ss_service_container" onClick={() => this.service_clicked(3)}>
                         <div className="ss_img_container">
                             <span className="ss_img_helper"></span>
                             <img className="ss_img" src={"/assets/qr_code.png"} />
@@ -33,6 +31,13 @@ class ServiceSelector extends React.Component {
                             <img className="ss_img" src={"/assets/easy_park.png"} />
                         </div>
                         <p>EasyPark</p>
+                    </button>
+                    <button className="ss_service_container" onClick={() => this.service_clicked(2)}>
+                        <div className="ss_img_container">
+                            <span className="ss_img_helper"></span>
+                            <img className="ss_img" src={"/assets/occupancy.png"} />
+                        </div>
+                        <p className="ss_of">Occupancy Forecast</p>
                     </button>
                     <div className="clearFloat"></div>
                 </div>              

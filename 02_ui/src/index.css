@@ -6,10 +6,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: #E5E5E5;
+  background: white;
+
+  font-size: 20px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 1024px;
+  width: 768px;
+  margin: auto;
+  margin-top: 30px;
+  background: #E5E5E5;
+  overflow: auto;
 }
