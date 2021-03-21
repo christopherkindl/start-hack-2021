@@ -6,6 +6,10 @@ import json
 
 class PredictionViewSet(JsonResponse):
     def predict(self):
+
+        ### @team-ml: insert the prediction here and convert to JSON.
+
+
         return JsonResponse([
             {
                 "date": "2021-11-02 13:00",
