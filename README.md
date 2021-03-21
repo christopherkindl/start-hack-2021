@@ -13,7 +13,6 @@
 
 <br><br>
 
-
 # Project Description
 
 Using customer rating of parking space occupation as a data labeling process to sharpen the machine learning model that is based on time-series model
