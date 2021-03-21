@@ -16,7 +16,7 @@
 
 # Project Description
 
-## Using customer rating of parking space occupation as a data labeling process to sharpen the machine learning model that is based on time-series model
+Using customer rating of parking space occupation as a data labeling process to sharpen the machine learning model that is based on time-series model
 
 ![alt text](https://github.com/christopherkindl/start-hack-2021/blob/main/Approach.png)
 
@@ -35,6 +35,12 @@ The forecast of the predicted occupancy over the next twelve hours.             
 
 <br><br>
 ## ML–Model
+
+
+### Model evaluation:
+
+- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
+- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_chris.ipynb)
 
 In order to construct a predictive model we formed the hypothesis that the true occupancy rate of the parking spaces can be approximated by the weighted sum of the ticket sales and the user input which we aim to collect. The user inputs will be averaged for a given timeslot.
 
