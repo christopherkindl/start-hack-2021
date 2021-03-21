@@ -18,7 +18,7 @@
 
 ## Application Architecture
 
-![alt text](https://github.com/christopherkindl/start-hack-2021/blob/main/Approach.png)
+![alt text](https://github.com/christopherkindl/start-hack-2021/blob/main/Approach.png){:height="400px" width="566px"}.
 
 The core of the application is a web API that provides the user with predictions about the expected occupancy of a given P+Rail parking facility at a given date and time, as well as allowing the system to become more accurate over time. Given some base model, a web service instance pulls data from the SBB data API in order to run an inference and returns the result to the user in JSON format. On the frontend (currently implemented in React), the data is visualised for different time windows. In style of the EasyRide functionality in the SBB Mobile app, the user of the P+Rail app is given the opportunity to start and stop his/her parking interval with the use of a slider. Using this functionality can be motivated through reductions in parking fares (pay per use) or through technological means (e.g. requiring the user by service agreement to register the vehicle upon arrival). Once the user stops the parking interval, a pop-up asks the user to enter the current occupancy of the facility in an easy, fast-to-use way, which he/she will be rewarded for by loyalty points (that could be used for discounts or other amenities). This user input is fed back through the API, where the data is collected and regularly used to reinforce the model by retraining it with the most recent data and the user inputs.
 
