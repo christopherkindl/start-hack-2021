@@ -21,13 +21,15 @@ class CurrentOccupancy extends React.Component {
         CanvasJS.addColorSet("single_colorset", ['#eb0000']);
     }
 
-    updateSelectedItem = evt => {
+    updateSelectedItem = (evt, redraw) => {
+
+        console.log("Event triggered " + evt);
 
         this.setState({
             current_selection: evt
         })
 
-        if(evt !== this.state.current_selection) {
+        if(evt !== this.state.current_selection || redraw) {
             if(this.props.updateCarOccupancy) {
                 
                 this.props.updateCarOccupancy(evt)
@@ -38,6 +40,8 @@ class CurrentOccupancy extends React.Component {
     }
 
     updateChart = nelem => {
+
+        console.log("Update triggered " + nelem);
 
         var chart = this.chart;
 
@@ -50,10 +54,7 @@ class CurrentOccupancy extends React.Component {
             //     return '[{"date": "2021-11-02 13:00","occupancy": 0.8}]';
             //     // return JSON.parse(response.json());
             // })
-            .then(function(data) {
-                
-                if(dataPoints.length > 0)
-                    dataPoints = [];
+            .then(data => {
 
                 var max_items = data.length;
 
@@ -70,10 +71,10 @@ class CurrentOccupancy extends React.Component {
                 }
                 else {
                     max_items = 1;
-                    // this.setState({current_selection: 0});
                 }
 
-                
+                if(dataPoints.length > 0)
+                    dataPoints = [];
 
                 console.log(max_items);
                 console.log(data);
@@ -86,8 +87,9 @@ class CurrentOccupancy extends React.Component {
                 }
 
                 chart.render();
-                // chart.render();
+                this.render();
             });
+
         }
         else {
             var arr = '[{"date": "2021-11-02 13:00","occupancy": 0.8},{"date": "2021-11-02 14:00","occupancy": 0.6},{"date": "2021-11-02 15:00","occupancy": 0.4},{"date": "2021-11-02 16:00","occupancy": 0.3},{"date": "2021-11-02 17:00","occupancy": 0.7},{"date": "2021-11-02 18:00","occupancy": 0.8},{"date": "2021-11-02 19:00","occupancy": 0.9},{"date": "2021-11-02 20:00","occupancy": 1.0},{"date": "2021-11-02 21:00","occupancy": 0.9},{"date": "2021-11-02 22:00","occupancy": 0.8},{"date": "2021-11-02 23:00","occupancy": 0.3},{"date": "2021-11-02 24:00","occupancy": 0.1}]';
@@ -217,7 +219,10 @@ class CurrentOccupancy extends React.Component {
         this.setState({
             current_selection: 0
         })
-        this.updateChart(0)
+
+        this.updateSelectedItem(0, true);
+
+        // this.updateChart(0)
     }
 
     render () {
@@ -257,9 +262,9 @@ class CurrentOccupancy extends React.Component {
                 <div className="clearFloat"></div>
                 
                 <div className="cocc-button-container">
-                    <button className={this.state.current_selection === 0 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(0)}>1 Hour</button>
-                    <button className={this.state.current_selection === 1 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(1)}>5 Hours</button>
-                    <button className={this.state.current_selection === 2 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(2)}>12 Hours</button>
+                    <button className={this.state.current_selection === 0 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(0, false)}>1 Hour</button>
+                    <button className={this.state.current_selection === 1 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(1, false)}>5 Hours</button>
+                    <button className={this.state.current_selection === 2 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(2, false)}>12 Hours</button>
                 </div>
 
                 <div className="cocc-occupancy-container">
