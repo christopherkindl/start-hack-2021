@@ -161,7 +161,7 @@ class OccupancyPopup extends React.Component {
 
                     <div>
                         <span className="occClose" onClick={this.close}>X</span>
-                        <p className="occTextLeft">Help us improve our parking occupancy forecast by answering one simple question</p>
+                        <p className="occTextLeft">Help us improve our parking occupancy forecast by answering one simple question.</p>
                         <p className="EPLocationName">How full was your parking today?</p>
                         <div className="occParking">
                             <OccupancyCar color={this.state.color} visible={this.state.visibilities[this.state.positions[0]]} />
