@@ -1,51 +1,43 @@
 from django.shortcuts import render
 from django.views import generic
 from django.http import JsonResponse
-
 import json
+import pg8000
 
-class PredictionViewSet(JsonResponse):
-    def predict(self):
+class PredictionViewSet(generic.View):
 
-        ### @team-ml: insert the prediction here and convert to JSON.
+    def get_predictions(self, date, time):
+        conn = pg8000.connect(user="postgres", password="p5my2ndc684k7zw84k7zw!Cariniliapippr2t0qdni6md",database="postgres", host="db-group1.crhso94tou3n.eu-west-2.rds.amazonaws.com")
+        cursor = conn.cursor()
+
+        # use hardcoded date and time as times were lost during import
+        # 
+        # Does the input (date, time) need to be sanitized?
+        print("Requested {} {}.".format(date, time))
+
+        s = """SELECT * FROM sbb.prediction WHERE date > '20210220' ORDER BY date ASC LIMIT 12"""
+        cursor.execute(s)
+        results = cursor.fetchall()
+
+        payload = []
+        hour = 13
+
+        for row in results:
+            date, occ = row
+            print(date)
+            print(date.strftime("%Y-%m-%d"))
+            payload.append({
+                "date": date.strftime("%Y-%m-%d") + " {}:00".format(hour),
+                "occupancy": occ
+                })
+            hour += 1
+
+        conn.commit()
+
+        return JsonResponse(payload, safe=False)
+
+    def get(self, request, *args, **kwargs):
+        return self.get_predictions(request.GET.get('date', ''), request.GET.get('time', ''))
 
 
-        return JsonResponse([
-            {
-                "date": "2021-11-02 13:00",
-                "occupancy": 0.8
-            },{
-                "date": "2021-11-02 14:00",
-                "occupancy": 0.6
-            },{
-                "date": "2021-11-02 15:00",
-                "occupancy": 0.4
-            },{
-                "date": "2021-11-02 16:00",
-                "occupancy": 0.3
-            },{
-                "date": "2021-11-02 17:00",
-                "occupancy": 0.7
-            },{
-                "date": "2021-11-02 18:00",
-                "occupancy": 0.8
-            },{
-                "date": "2021-11-02 19:00",
-                "occupancy": 0.9
-            },{
-                "date": "2021-11-02 20:00",
-                "occupancy": 1.0
-            },{
-                "date": "2021-11-02 21:00",
-                "occupancy": 0.9
-            },{
-                "date": "2021-11-02 22:00",
-                "occupancy": 0.8
-            },{
-                "date": "2021-11-02 23:00",
-                "occupancy": 0.3
-            },{
-                "date": "2021-11-02 24:00",
-                "occupancy": 0.1
-            }
-        ], safe=False)
+        

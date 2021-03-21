@@ -18,6 +18,6 @@ from django.urls import path
 from pnride.views import PredictionViewSet
 
 urlpatterns = [
-    path('pred_api', PredictionViewSet.predict),
+    path('pred_api', PredictionViewSet.as_view()),
     path('admin/', admin.site.urls),
 ]
