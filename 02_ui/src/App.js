@@ -6,6 +6,7 @@ import {Header, Spacer, Locations, OccupancyPopup, SearchBar} from './UIElements
 import {EasyPark} from './EasyPark.js'
 import {CurrentOccupancy} from './CurrentOccupancy.js'
 import {ServiceSelector} from './ServiceSelector.js'
+import {ExistingFeature} from './ExistingFeature.js'
 
 class App extends React.Component {
   state = {
@@ -40,13 +41,8 @@ class App extends React.Component {
           <EasyPark triggerInput={this.set_occ_visibile} />
           {this.state.occVisible ? <OccupancyPopup close={this.set_occ_visibile} /> : null }
   
-          <Spacer />
-          <CurrentOccupancy />
-  
-    
-          {/* <div class="btn" onClick={() => {this.set_occ_visibile(true)}}>
-            <button>This is button</button>
-          </div> */}
+          {/* <Spacer />
+          <CurrentOccupancy /> */}
         </div>
       );
     }
@@ -63,13 +59,23 @@ class App extends React.Component {
       );
     }
     else if(this.state.current_page === 2) {
-      // EasyPark
+      // Occupancy Estimation
       return ( 
         <div className="App">
           <Header go_to_service={this.change_page} />
           {/* <SearchBar /> */}
           <Spacer />
           <CurrentOccupancy />
+        </div>
+       );
+    }
+    else if(this.state.current_page === 3) {
+      // Existing Feature
+      return ( 
+        <div className="App">
+          <Header go_to_service={this.change_page} />
+          <Spacer />
+          <ExistingFeature />
         </div>
        );
     }

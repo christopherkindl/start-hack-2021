@@ -69,6 +69,8 @@ class EasyParkSlider extends React.Component {
     }
   }
   
+
+  
   class EasyPark extends React.Component {
     constructor (props) {
       super(props)

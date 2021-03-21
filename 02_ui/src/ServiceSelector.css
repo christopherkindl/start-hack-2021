@@ -6,6 +6,8 @@
 .ss_service_container {
     background-color: white;
 
+    font-size: 20px;
+
     float: left;
     border: none;
 
@@ -32,4 +34,8 @@
     margin: auto;
     margin-top: 15px;
     vertical-align: middle;
+}
+
+.ss_of {
+    margin-top: 10px;
 }

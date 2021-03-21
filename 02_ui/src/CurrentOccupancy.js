@@ -111,7 +111,7 @@ class CurrentOccupancy extends React.Component {
                 <div className="cocc-button-container">
                     <button className={this.state.current_selection === 0 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(0)}>1 Hour</button>
                     <button className={this.state.current_selection === 1 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(1)}>5 Hours</button>
-                    <button className={this.state.current_selection === 2 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(2)}>1 Day</button>
+                    <button className={this.state.current_selection === 2 ? "cocc-button-selected" : "cocc-button"} onClick={() => this.updateSelectedItem(2)}>12 Hours</button>
                 </div>
 
                 <div className="cocc-occupancy-container">

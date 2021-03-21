@@ -151,7 +151,7 @@ class OccupancyPopup extends React.Component {
                 { this.state.submitted ?
 
                     <div>
-                        <span className="occClose" onClick={this.close}>&times;</span>
+                        <span className="occClose" onClick={this.close}>X</span>
                         <p>Thank you for your feedback.</p>
                         <br />
                         <p>You earned 10 points!</p>
@@ -160,8 +160,9 @@ class OccupancyPopup extends React.Component {
                     :
 
                     <div>
-                        <span className="occClose" onClick={this.close}>&times;</span>
-                        <p>How full was your parking today?</p>
+                        <span className="occClose" onClick={this.close}>X</span>
+                        <p className="occTextLeft">Help us improve our parking occupancy forecast by answering one simple question</p>
+                        <p className="EPLocationName">How full was your parking today?</p>
                         <div className="occParking">
                             <OccupancyCar color={this.state.color} visible={this.state.visibilities[this.state.positions[0]]} />
                             <OccupancyCar color={this.state.color} visible={this.state.visibilities[this.state.positions[1]]} />
