@@ -54,4 +54,4 @@ The prediction seem to accurately depict the real occupancy rates, indicating th
 
 We achieved a mean squared error of 0.0295 for the occupancy rate.
 
-![](./01_ml/prediction.png)
+![](./01_ml/Model.png)
