@@ -103,7 +103,7 @@ def ml_train_prediction(**kwargs):
     # print("date and time:",date_time)
 
     #name of the file
-    key = Variable.get("housing_webscraping_get_csv", deserialize_json=True)['key2']+".csv" 
+    key = Variable.get("get_csv", deserialize_json=True)['key1']+".csv" 
 
     # Prepare the file to send to s3
     csv_buffer_zoopla = io.StringIO()
