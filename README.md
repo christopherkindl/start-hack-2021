@@ -2,6 +2,8 @@
 
 **We won the SBB case of this year's Hackathon hosted by startglobal.org :tada:**
 
+[About startglobal](https://www.startglobal.org/)
+
 ## Live Demo
 [Link to Web-App](https://park-and-rail.azurewebsites.net/)
 
