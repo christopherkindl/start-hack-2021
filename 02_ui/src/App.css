@@ -36,6 +36,20 @@
   font-family: 'SBBWeb-Roman';
 }
 
+.header_back {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-weight: lighter;
+  border: none;
+  color: white;
+  background: none;
+}
+
+.header_back > img {
+  height: 36px;
+}
+
 .header {
   height: 80px;
   background-color: #EB0000;
@@ -81,7 +95,7 @@
 
 .createNow {
   color: #EB0000;
-  font-size: 18px;
+  font-size: 20px;
   float: right;
 }
 

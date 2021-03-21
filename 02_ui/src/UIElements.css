@@ -20,6 +20,10 @@
     display:inline;
 }
 
+.loc_p {
+    font-size: 18px;
+}
+
 .occClose {
     color: Black;
     float: right;
