@@ -51,3 +51,7 @@ Since at this point we do not have user inputs to work with, simulated it by art
 We then trained a time series model on a the weighted ticket sales data and the simulated user input and finally computed a forecast on an hourly basis.
 
 The prediction seem to accurately depict the real occupancy rates, indicating that the assumptions we made are realtively valid.
+
+We achieved a mean squared error of 0.0295 for the occupancy rate.
+
+![](./01_ml/prediction.png)
