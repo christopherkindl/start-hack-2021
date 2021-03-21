@@ -9,18 +9,25 @@
 }
 
 .occSlider {
-    margin-bottom: 80px;
+    margin-bottom: 90px;
 }
 
 .occSlider .rangeslider {
     /* height: 100px !important; */
     /* border-radius: 50px !important; */
+    height: 36px !important;
 }
 
 .occSlider .rangeslider__handle {
-    background-color: #EB0000 !important;
     box-shadow: none !important;
     border-radius: 50px !important;
+
+    width: 42px;
+    height: 40px;
+
+    background-image: url("./assets/car_slider.png");
+    background-size: 42px;
+    background-repeat: no-repeat;
 }
 
 .occSlider .rangeslider__handle::after {
@@ -28,6 +35,9 @@
     box-shadow: none !important;
     width: 0px !important;
     height: 0px !important;
+
+    background-image: url("./assets/car_slider.png");
+    background-size: 30px;
 }
 
 .occSlider .rangeslider__fill {

@@ -34,6 +34,21 @@
 
 .App {
   font-family: 'SBBWeb-Roman';
+  position: relative;
+}
+
+.header_back {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-weight: lighter;
+  border: none;
+  color: white;
+  background: none;
+}
+
+.header_back > img {
+  height: 36px;
 }
 
 .header {
@@ -81,7 +96,7 @@
 
 .createNow {
   color: #EB0000;
-  font-size: 18px;
+  font-size: 20px;
   float: right;
 }
 
@@ -98,7 +113,7 @@
 }
 
 .EPLocation > p {
-  font-size: 18px;
+  font-size: 22px;
   display: inline;
   float: left;
   margin-top: 6px;
