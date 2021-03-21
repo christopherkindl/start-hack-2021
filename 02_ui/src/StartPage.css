@@ -1,5 +1,5 @@
 .sp_main_container {
-    position: absolute;
+    position: fixed;
     left: 0px;
     right: 0px;
     top: 0px;
@@ -68,6 +68,7 @@
     position: absolute;
     top: 100px;
     right: 100px;
+    width: 700px;
 }
 
 .sp_close_button {
