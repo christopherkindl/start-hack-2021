@@ -89,10 +89,10 @@ def ml_train_prediction(**kwargs):
     log.info('df done')
     log.info("Prediction done")
 
-    #Establishing S3 connection
+   #Establishing S3 connection
     s3 = S3Hook(kwargs['aws_conn_id'])
     bucket_name = kwargs['bucket_name']
-    log.info('connection established')
+
     #creating timestamp
 
     # from datetime import datetime
@@ -103,31 +103,29 @@ def ml_train_prediction(**kwargs):
     # print("date and time:",date_time)
 
     #name of the file
-    key = Variable.get("get_csv", deserialize_json=True)['key1']+".csv"
+    key = Variable.get("housing_webscraping_get_csv", deserialize_json=True)['key2']+".csv" 
 
     # Prepare the file to send to s3
-    #csv_buffer_zoopla = io.StringIO()
-    csv = io.StringIO()
-
+    csv_buffer_zoopla = io.StringIO()
     #Ensuring the CSV files treats "NAN" as null values
-    #zoopla_csv=df.to_csv(csv, index=False)
-    zoopla_csv=df.to_csv(csv, index=False)
-    log.info('to csv')
+    zoopla_csv=df.to_csv(csv_buffer_zoopla, index=False)
+
     # Save the pandas dataframe as a csv to s3
     s3 = s3.get_resource_type('s3')
 
     # Get the data type object from pandas dataframe, key and connection object to s3 bucket
-    #data = csv_buffer_zoopla.getvalue()
-    data = csv.getvalue()
+    data = csv_buffer_zoopla.getvalue()
 
-    log.info('saving file')
+    print("Saving CSV file")
     object = s3.Object(bucket_name, key)
 
     # Write the file to S3 bucket in specific path defined in key
     object.put(Body=data)
 
     log.info('Finished saving the scraped data to s3')
+
     return
+
 
 ## DUMMMY TEST
 
