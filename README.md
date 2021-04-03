@@ -1,6 +1,6 @@
 # Start Hack 2021
 
-**We won the SBB case of this year's Hackathon hosted by startglobal.org :tada:**
+**Update: We won the SBB case of this year's Hackathon hosted by startglobal.org :tada:**
 
 [About startglobal](https://www.startglobal.org/)
 
