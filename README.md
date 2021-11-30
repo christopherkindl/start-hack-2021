@@ -25,6 +25,7 @@ The hackathon was hosted by [startglobal](https://www.startglobal.org/)
 ## Table of contents
    * [Solution submitted during hackathon](#Solution-submitted-during-hackathon)
       * [Concept](#concept)
+      * [Machine learning approach](#machine-learning-approach)
       * [Resources](#resources)
    * [Research paper](#research-paper)
       * [Dependencies and installation](#dependencies)
@@ -40,31 +41,24 @@ The hackathon was hosted by [startglobal](https://www.startglobal.org/)
 
 ![alt text](https://github.com/christopherkindl/start-hack-2021/blob/main/img/Architecture.png)
 
-The core of the application is a web API that provides the user with predictions about the occupancy of a given P+Rail parking site at a given hour, as well as allowing users to give feedback of the perceived parking occupancy, such that the model can be calibrated. Given some machine learning model, a web service instance pulls data from the SBB data API to run an inference. Results are then sent to the front-end, which is an App for purchasing parking tickets (P+Rail App). In the front-end (implemented in React), the data is visualized for different time windows. In style of the EasyRide functionality in the SBB Mobile app, users of the P+Rail app are given the option to start and stop their parking session with the help of a data input slider. Nudging can be applied to increase user contribution, such as reductions in parking fares (pay per use) or through technological means (e.g. requiring the user by service agreement to register the vehicle upon arrival). Once users finish a parking session, a pop-up asks the user to enter the perceived occupancy of the facility in a convenient manner. which he/she will be rewarded for by loyalty points (that could be used for discounts or other amenities). This user input is fed back through the API, where the data is collected and regularly used to reinforce the model by retraining it with the most recent data and the user inputs.
-
-Through the use of a data-driven approach it is easy to schedule retraining with a multitude of parameters. For example retraining can be triggered excluding or including certain input parameters (such as day of week, weather, season, etc.) and the resulting accuracies compared. In this way, not only is the model accuracy improving over time, yielding higher value of the service for customers and the SBB, it is also possible to narrow down potential variables affecting the occupancy of a certain facility and factor out others playing only a minor role.
+The core of the application is a web API that provides the user with predictions about the occupancy of a given P+Rail parking site at a given hour, as well as allowing users to give feedback of the perceived parking occupancy, such that the model can be calibrated. Given some machine learning model, a web service instance pulls data from the SBB data API to run an inference. Results are then sent to the front-end, which is an App for purchasing parking tickets (P+Rail App). In the front-end (implemented in React), the data is visualized for different time windows. Users of the P+Rail app are given the option to start and stop their parking session with the help of a data input slider. Nudging can be applied to increase user contribution, such as reductions in parking fares (pay per use) or through technological means (e.g. requiring the user by service agreement to register the vehicle upon arrival). Once users finish a parking session, a pop-up asks the user to enter the perceived occupancy of the facility in a convenient manner. which he/she will be rewarded for by loyalty points (that could be used for discounts or other amenities). This user input is fed back through the API, where the data is collected and regularly used to reinforce the model by retraining it with the most recent data and the user inputs.
 
 The forecast of the predicted occupancy over the next twelve hours.             |  The EasyPark slider engaged during parking at Rapperswil Bahnhof.         
 :-------------------------:|:-------------------------:
 ![](./ui_3.png)  |  ![](./ui_1.png)
 
 <br><br>
-## ML–Model
+### Machine learning approach
 
-
-### Model evaluation:
+(only refers to solutions submitted for hackathon)
 
 - [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
 - [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_chris.ipynb)
 
-In order to construct a predictive model we formed the hypothesis that the true occupancy rate of the parking spaces can be approximated by the weighted sum of the ticket sales and the user input which we aim to collect. The user inputs will be averaged for a given timeslot.
+We formed the hypothesis that the true occupancy rate of the parking spaces can be approximated by the weighted sum of the ticket sales and the enduser input which we aim to collect. The user inputs will be averaged for a given timeslot.
 
-If the solution is implemented in real life, the weight values can be computed by collecting user input for the parking spaces where the occupancy rate is already being tracked (i.e. Rapperswil) as a first stage and comparing the outputs in terms of correlation or similar.
-
-Since at this point we do not have user inputs to work with, simulated it by artificially adding noise to the occupancy rate (Rapperswil) dataset.
-
-We then trained a time series model on a the weighted ticket sales data and the simulated user input and finally computed a forecast on an hourly basis.
-
-The prediction seem to accurately depict the real occupancy rates, indicating that the assumptions we made are realtively valid.
+If the solution is implemented in real life, the weight values can be computed by collecting user input for the parking spaces where the occupancy rate is already being tracked (i.e. Rapperswil) as a first stage and comparing the outputs in terms of correlation or similar. Since at this point we do not have user inputs to work with, simulated it by artificially adding noise to the occupancy rate (Rapperswil) dataset. We then trained a time series model on a the weighted ticket sales data and the simulated user input and finally computed a forecast on an hourly basis. The prediction seem to accurately depict the real occupancy rates, indicating that the assumptions we made are realtively valid.
 
 ![](./Model.png)
+
+### Resources
