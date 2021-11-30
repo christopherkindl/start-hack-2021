@@ -45,7 +45,8 @@ The forecast of the predicted occupancy over the next twelve hours.             
 :-------------------------:|:-------------------------:
 ![](./ui_3.png)  |  ![](./ui_1.png)
 
-<br><br>
+(Add solution architecture)
+
 ### Machine learning approach (only refers to solutions submitted for hackathon)
 
 During the hackathon, we developed a first approach for a machine learning model. Details are explained in the following. However, a comprehensive and validated approach was developed for the research paper.
@@ -58,11 +59,11 @@ If the solution is implemented in real life, the weight values can be computed b
 ### Resources
 
 Details about the front-end application:
-- [Web-App source code for prototype purposes](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
+- [Web-App source code for prototype purposes](https://github.com/christopherkindl/start-hack-2021/blob/main/03_hackathon_submissions/model_training_achi.ipynb)
 
 Links to predictive models developed during hackathon:
-- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
-- [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_chris.ipynb)
+- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/03_hackathon_submissions/model_training_achi.ipynb)
+- [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/03_hackathon_submissions/model_training_chris.ipynb)
 
 # Research paper
 
@@ -70,10 +71,10 @@ For the paper, we suggested a multi-feature prediction model that is based on se
 
 The development of the model is based upon the following stages:
 
-**1. Data collection:** [00_data](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb) already includes pre-processed data, for more details of data acquisition see, for example script [data_fetcher.py](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)\
-**2. Feature engineering:** [feature_engineering.ipynb](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)\
-**3. Baseline model:** [baseline_model.ipynb](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)\
-**4. Advanced model (XGBoost):** [advanced_model.ipynb](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
+**1. Data collection:** `00_data` already includes pre-processed data, for more details of data acquisition see, for example script `00_data/data_fetcher.py`\
+**2. Feature engineering:** `01_ml/feature_engineering.ipynb`\
+**3. Baseline model:** `01_ml/baseline_model.ipynb`\
+**4. Advanced model (XGBoost):**  `01_ml/advanced_model.ipynb`
 
 To run the notebooks, please install the required dependencies.
 
