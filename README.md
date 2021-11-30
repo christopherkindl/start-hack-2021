@@ -78,5 +78,5 @@ The development of the model is based upon the following stages:
 To run the notebooks, please install the required dependencies.
 
 ```bash
-pip install requirements.py
+pip install requirements.txt
 ```
