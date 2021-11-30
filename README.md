@@ -48,18 +48,21 @@ The forecast of the predicted occupancy over the next twelve hours.             
 <br><br>
 ### Machine learning approach (only refers to solutions submitted for hackathon)
 
-- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
-- [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_chris.ipynb)
+During the hackathon, we developed a first approach for a machine learning model. Details are explained in the following. However, a comprehensive and validated approach was developed for the research paper.
 
 We formed the hypothesis that the true occupancy rate of the parking spaces can be approximated by the weighted sum of the ticket sales and the enduser input which we aim to collect. The user inputs will be averaged for a given timeslot.
 
 If the solution is implemented in real life, the weight values can be computed by collecting user input for the parking spaces where the occupancy rate is already being tracked (i.e. Rapperswil) as a first stage and comparing the outputs in terms of correlation or similar. Since at this point we do not have user inputs to work with, simulated it by artificially adding noise to the occupancy rate (Rapperswil) dataset. We then trained a time series model on a the weighted ticket sales data and the simulated user input and finally computed a forecast on an hourly basis. The prediction seem to accurately depict the real occupancy rates, indicating that the assumptions we made are realtively valid.
 
-![](./Model.png)
 
 ### Resources
 
-(To be done)
+**Details about the front-end application**:
+- [Web-App source code for prototype purposes](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
+
+**Links to predictive models developed during hackathon:**
+- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
+- [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_chris.ipynb)
 
 # Research paper
 
