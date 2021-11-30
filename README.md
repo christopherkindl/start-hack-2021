@@ -69,6 +69,13 @@ Links to predictive models developed during hackathon:
 
 For the paper, we suggested a multi-feature prediction model that is based on several data domains as introduced in the beginning.  XGBoost, an ensemble learning technique based on decision trees, is used as forecasting method as the individual contribution of each feature is the scope and not performance comparision on algorithm level.
 
+To run the notebooks, please install the required dependencies.
+
+```bash
+pip install requirements.txt
+```
+
+
 The development of the model is based upon the following stages:
 
 **1. Data collection:** `00_data` already includes pre-processed data, for more details of data acquisition see, for example script `00_data/data_fetcher.py`\
@@ -76,8 +83,4 @@ The development of the model is based upon the following stages:
 **3. Baseline model:** `01_ml/baseline_model.ipynb`\
 **4. Advanced model (XGBoost):**  `01_ml/advanced_model.ipynb`
 
-To run the notebooks, please install the required dependencies.
 
-```bash
-pip install requirements.txt
-```
