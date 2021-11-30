@@ -57,10 +57,10 @@ If the solution is implemented in real life, the weight values can be computed b
 
 ### Resources
 
-**Details about the front-end application**:
+Details about the front-end application:
 - [Web-App source code for prototype purposes](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
 
-**Links to predictive models developed during hackathon:**
+Links to predictive models developed during hackathon:
 - [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
 - [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_chris.ipynb)
 
