@@ -62,3 +62,9 @@ If the solution is implemented in real life, the weight values can be computed b
 ![](./Model.png)
 
 ### Resources
+
+(To be done)
+
+# Research paper
+
+(...)
