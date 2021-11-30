@@ -66,4 +66,17 @@ Links to predictive models developed during hackathon:
 
 # Research paper
 
-(...)
+For the paper, we suggested a multi-feature prediction model that is based on several data domains as introduced in the beginning.  XGBoost, an ensemble learning technique based on decision trees, is used as forecasting method as the individual contribution of each feature is the scope and not performance comparision on algorithm level.
+
+The development of the model is based upon the following stages:
+
+**1. Data collection:** [00_data](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb) already includes pre-processed data, for more details of data acquisition see, for example script [data_fetcher.py](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)\
+**2. Feature engineering:** [feature_engineering.ipynb](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)\
+**3. Baseline model:** [baseline_model.ipynb](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)\
+**4. Advanced model (XGBoost):** [advanced_model.ipynb](https://github.com/christopherkindl/start-hack-2021/blob/main/01_ml/model_training_achi.ipynb)
+
+To run the notebooks, please install the required dependencies.
+
+```bash
+pip install requirements.py
+```
