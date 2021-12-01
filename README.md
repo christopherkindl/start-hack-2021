@@ -11,7 +11,7 @@ This repository features the winning solution created during the hackathon and t
   * Ticket sales data
   * Weather and public holidays information
 
-The model was tested on real-world data from two parking sites. For a 3-month forecast of each parking site, the model including all features achieved a high accuracy with a mean absolute error of **2.34** and **4.27**, respectively. The hackathon solutions includes consideration on how enduser feedback can be collected and used to calibrate the predictive model.
+The model was tested on real-world data from two parking sites. For hourly forecasts over three months of each parking site, the model including all features achieved a high accuracy with a mean absolute error of **2.39** and **4.27**, respectively. The hackathon solutions includes considerations on how enduser feedback can be collected and used to calibrate the predictive model.
 
 **Authors**
 - [Yvan Bosshard](https://https://www.linkedin.com/in/yvan-bosshard/), ETH Zurich
@@ -67,7 +67,7 @@ Links to predictive models developed during hackathon:
 
 # Research paper
 
-For the paper, we suggested a multi-feature prediction model that is based on several data domains as introduced in the beginning.  XGBoost, an ensemble learning technique based on decision trees, is used as forecasting method as the individual contribution of each feature is the scope and not performance comparision on algorithm level.
+In the paper, we suggested a multi-feature prediction model that is based on several data domains as introduced in the beginning.  XGBoost, an ensemble learning technique based on decision trees, is used as forecasting method. Note that the scope of this paper is an analysis of the contribution of each individual feature and not a performance comparision on algorithm level.
 
 To run the notebooks, please install the required dependencies.
 
