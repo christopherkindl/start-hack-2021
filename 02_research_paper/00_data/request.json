@@ -1,0 +1,16 @@
+{
+    "query_filter": {
+        "start": 1628589600,
+        "end": 1628676000,
+        "parking_lot_ids": [
+            2608
+       ]
+    },
+    "data_filter": {
+    },
+    "additional_columns": [
+        "arrival_local_time", "departure_local_time"
+    ],
+    "merge_resets": false,
+    "time_zone_delta_minutes": 0
+}
