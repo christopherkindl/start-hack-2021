@@ -29,7 +29,7 @@ The hackathon was hosted by [startglobal](https://www.startglobal.org/)
       * [Resources](#Resources)
    * [Research paper](#Research-paper)
       * [Dependencies and installation](#Dependencies)
-      * [Resources](#Recources)
+      * [Notebooks](#Notebooks)
 
 
 
@@ -77,7 +77,7 @@ To run the notebooks, please install the required dependencies.
 pip install requirements.txt
 ```
 
-### Resources
+### Notebooks
 
 The development of the model is based upon the following stages:
 
