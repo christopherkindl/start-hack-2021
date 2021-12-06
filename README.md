@@ -24,15 +24,13 @@ The hackathon was hosted by [startglobal](https://www.startglobal.org/)
 
 ## Table of contents
    * [Solution submitted during hackathon](#Solution-submitted-during-hackathon)
-      * [Concept](#concept)
-      * [Machine learning approach](#machine-learning-approach)
-      * [Resources](#resources)
-   * [Research paper](#research-paper)
-      * [Dependencies and installation](#dependencies)
-      * [Data pre-processing](#preprocessing)
-      * [Feature extraction](#feature-extraction)
-      * [Baseline model](#baseline-model)
-      * [Advanced model](#advanced-model)
+      * [Concept](#Concept)
+      * [Machine learning approach](#Machine-learning-approach)
+      * [Resources](#Resources)
+   * [Research paper](#Research-paper)
+      * [Dependencies and installation](#Dependencies)
+      * [Resources](#Recources)
+
 
 
 
@@ -43,11 +41,13 @@ The core of the application is a web API that provides the user with predictions
 
 The forecast of the predicted occupancy over the next twelve hours.             |  The EasyPark slider engaged during parking at Rapperswil Bahnhof.         
 :-------------------------:|:-------------------------:
-![](./ui_3.png)  |  ![](./ui_1.png)
+![](./01_hackathon_submission/03_resources/ui_3.png)  |  ![](./01_hackathon_submission/03_resources/ui_1.png)
 
-(Add solution architecture)
+![](./01_hackathon_submission/03_resources/Approach.png)
 
-### Machine learning approach (only refers to solutions submitted for hackathon)
+### Machine learning approach
+
+**Important hint: only refers to solutions submitted for hackathon**
 
 During the hackathon, we developed a first approach for a machine learning model. Details are explained in the following. However, a comprehensive and validated approach was developed for the research paper.
 
@@ -59,15 +59,17 @@ If the solution is implemented in real life, the weight values can be computed b
 ### Resources
 
 Details about the front-end application:
-- [Web-App source code for prototype purposes](https://github.com/christopherkindl/start-hack-2021/blob/main/03_hackathon_submissions/model_training_achi.ipynb)
+- [Web-App source code for prototype purposes](./01_hackathon_submission/02_user_interface)
 
 Links to predictive models developed during hackathon:
-- [jupyter notebook holt-winters time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/03_hackathon_submissions/model_training_achi.ipynb)
-- [jupyter notebook Facebook-Prophet time-series model](https://github.com/christopherkindl/start-hack-2021/blob/main/03_hackathon_submissions/model_training_chris.ipynb)
+- [jupyter notebook holt-winters time-series model](./01_hackathon_submission/01_machine_learning/model_training_achi.ipynb)
+- [jupyter notebook Facebook-Prophet time-series model](./01_hackathon_submission/01_machine_learning/model_training_chris.ipynb)
 
 # Research paper
 
 In the paper, we suggested a multi-feature prediction model that is based on several data domains as introduced in the beginning.  XGBoost, an ensemble learning technique based on decision trees, is used as forecasting method. Note that the scope of this paper is an analysis of the contribution of each individual feature and not a performance comparision on algorithm level.
+
+### Dependencies
 
 To run the notebooks, please install the required dependencies.
 
@@ -75,12 +77,13 @@ To run the notebooks, please install the required dependencies.
 pip install requirements.txt
 ```
 
+### Resources
 
 The development of the model is based upon the following stages:
 
-**1. Data collection:** `00_data` already includes pre-processed data, for more details of data acquisition see, for example script `00_data/data_fetcher.py`\
-**2. Feature engineering:** `01_ml/feature_engineering.ipynb`\
-**3. Baseline model:** `01_ml/baseline_model.ipynb`\
-**4. Advanced model (XGBoost):**  `01_ml/advanced_model.ipynb`
+**1. Data collection:** [Link to data and pre-processing scripts](./02_research_paper/00_data) \
+**2. Feature engineering:** [Link to notebook](./02_research_paper/01_machine_learning/feature_engineering.ipynb)\
+**3. Baseline model:** [Link to notebook](./02_research_paper/01_machine_learning/baseline_model.ipynb) \
+**4. Advanced model (XGBoost):**  [Link to notebook](./02_research_paper/01_machine_learning/advanced_models.ipynb)
 
 
