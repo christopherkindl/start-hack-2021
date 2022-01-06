@@ -1,3 +1,6 @@
+[![Contributors](https://img.shields.io/static/v1?label=contributors&message=4&color=success)](https://img.shields.io/static/v1?label=contributors&message=4&color=success) [![Coffee Cups](https://img.shields.io/static/v1?label=Coffee%20Cups&message=too%20many&color=critical)](https://img.shields.io/static/v1?label=Coffee%20Cups&message=too%20many&color=critical) [![License](https://img.shields.io/static/v1?label=license&message=GNU%20GPLv3&color=success)](https://img.shields.io/static/v1?label=license&message=GNU%20GPLv3&color=success)
+- - -
+
 # Case winner of Start Hack 2021: Predictive models for car parking space occupancy for the Swiss federal railways (SBB)
 
 **Challenge**\
